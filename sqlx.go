@@ -749,7 +749,7 @@ func (r *Row) scanAny(dest interface{}, structOnly bool) error {
 	}
 
 	base := reflectx.Deref(v.Type())
-	scannable := isScannable(base)
+	scannable := true
 
 	if structOnly && scannable {
 		return structOnlyError(base)
